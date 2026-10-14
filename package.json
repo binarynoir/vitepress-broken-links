@@ -1,6 +1,6 @@
 {
   "name": "@binarynoir/vitepress-broken-links",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Stop dead links from failing a VitePress build: each one renders as text with a popover that explains what is wrong and where.",
   "keywords": [
     "vitepress",
