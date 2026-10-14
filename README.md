@@ -12,6 +12,8 @@ are left exactly as they are.
 It's built for docs sites with many contributors, where one mistyped link
 shouldn't take the whole site down.
 
+[Documentation and live demo](https://binarynoir.tech/plugins/broken-links)
+
 [![Support me on Buy Me a Coffee](https://img.shields.io/badge/Support%20me-Buy%20Me%20a%20Coffee-orange?style=for-the-badge&logo=buy-me-a-coffee)](https://buymeacoffee.com/binarynoir)
 [![Support me on Ko-fi](https://img.shields.io/badge/Support%20me-Ko--fi-blue?style=for-the-badge&logo=ko-fi)](https://ko-fi.com/binarynoir)
 [![More tools](https://img.shields.io/badge/Website-binarynoir.tech-8c8c8c?style=for-the-badge)](https://binarynoir.tech)
@@ -222,3 +224,50 @@ Bug reports, feature requests and questions are all welcome. Please open them on
 - **Something else?** [Browse open issues](https://github.com/binarynoir/vitepress-broken-links/issues) to see if it has already been raised.
 
 Pull requests are welcome too.
+
+## More from BinaryNoir
+
+<p align="center">
+  <a href="https://binarynoir.tech">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://binarynoir.tech/logo-wide-dark.svg">
+      <img alt="BinaryNoir" src="https://binarynoir.tech/logo-wide-light.svg" width="320">
+    </picture>
+  </a>
+</p>
+
+Broken Links is one of a family of open-source VitePress plugins, editor extensions and command-line tools from BinaryNoir. Browse them all, with documentation and live demos, at **[binarynoir.tech](https://binarynoir.tech)**.
+
+**VitePress plugins**
+
+- [Auto Sidebar](https://binarynoir.tech/plugins/auto-sidebar): sidebar built from your folders
+- [Auto Navbar](https://binarynoir.tech/plugins/auto-navbar): navbar built from your folders
+- [Markdown Tags](https://binarynoir.tech/plugins/markdown-tags/): inline status badges
+- [Reading Time Tag](https://binarynoir.tech/plugins/reading-time-tag): reading-time estimates
+- [Glossary Tooltips](https://binarynoir.tech/plugins/glossary/): hover definitions from one glossary file
+- [Downloads](https://binarynoir.tech/plugins/downloads): downloadable files next to your pages
+- [Exclude](https://binarynoir.tech/plugins/exclude/): keep pages out of the build with a `.exclude` file
+- [README Index](https://binarynoir.tech/plugins/readme-index/): `README.md` index pages for VuePress migrations
+- [HTML Escape](https://binarynoir.tech/plugins/html-escape/): stray tags and braces shown as text, not build errors
+
+**Vite plugins**
+
+- [Optimize Images](https://binarynoir.tech/plugins/optimize-images): smaller images in the build output
+- [Image Fallback](https://binarynoir.tech/plugins/image-fallback): a placeholder instead of a failed build
+
+**Editor extensions**
+
+- [Tags for Markdown for VS Code](https://binarynoir.tech/plugins/markdown-tags/vscode): status badges in the VS Code Markdown preview
+- [Tags for Markdown for Obsidian](https://binarynoir.tech/plugins/markdown-tags/obsidian): status badges in Obsidian
+
+**Command-line tools**
+
+- [NoirWatch](https://binarynoir.tech/apps/noirwatch): get notified when a web page changes
+- [NoirCon](https://binarynoir.tech/apps/noircon): get notified when a site, server or port goes down
+- [callrx](https://binarynoir.tech/apps/callrx): amateur radio callsign lookup
+
+Website, docs and demos: **[binarynoir.tech](https://binarynoir.tech)**
+
+## Author
+
+John Smith III, [BinaryNoir](https://binarynoir.tech). Thanks to all contributors and users for their support and feedback.

@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-10-14
+
+### Changed
+
+- README: add a Documentation and live demo link, and a More from BinaryNoir section listing the other plugins and tools, with links to binarynoir.tech
+
 ## [0.1.1] - 2026-10-13
 
 ### Fixed
