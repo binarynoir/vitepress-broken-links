@@ -1,0 +1,19 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [Unreleased]
+
+## [0.1.0] - 2026-10-13
+
+### Added
+
+- `markdownBrokenLinks` markdown-it plugin: links VitePress would report as dead are rendered as a `<span class="broken-link-hint">` around the link text instead of failing the build, using VitePress's own page list, `rewrites`, `public/` HTML files and `ignoreDeadLinks`
+- `hints` option (default `true`): each broken link carries an explanation, file and line
+- `warn` option (default `true`): a warning per broken link through VitePress's logger
+- `brokenLinks` frontmatter: `false` hands a page back to VitePress's check, an object overrides options
+- `withBrokenLinks()` config wrapper from `@binarynoir/vitepress-broken-links/vitepress`
+- `enableBrokenLinkHints()` from `@binarynoir/vitepress-broken-links/client`: wavy underline and a popover on hover, click or tap
