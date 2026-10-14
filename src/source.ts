@@ -17,6 +17,9 @@ export function recordSource(md: MarkdownIt): void {
   };
 }
 
+/** The full source of the page being rendered with `env`, if recorded. */
+export const sourceOf = (env: object): string | undefined => sources.get(env);
+
 /**
  * How many lines of the source file come before line 1 of the parsed
  * content: the frontmatter VitePress stripped (`env.content` is what it

@@ -2,13 +2,30 @@ import type { MarkdownIt } from 'markdown-it';
 import { findDeadLink, getSiteConfig } from './deadLinks.js';
 import { HINT_CLOSE_TAG, deadLinkMessage, hintOpenTag } from './hints.js';
 import { resolveSettings } from './settings.js';
-import { lineOffset, recordSource } from './source.js';
+import { lineOffset, recordSource, sourceOf } from './source.js';
 import type { BrokenLinksOptions } from './types.js';
 
 type RenderRule = NonNullable<MarkdownIt['renderer']['rules']['link_open']>;
 
 // Whether each open link in a render was replaced, so its link_close matches.
 const openLinks = new WeakMap<object, boolean[]>();
+
+// Warnings already logged for each page, and the source they were logged for.
+// VitePress renders a page more than once per build; a page whose source has
+// changed since, as in `vitepress dev`, is warned about again.
+const warned = new Map<string, { source: string | undefined; messages: Set<string> }>();
+
+/** Whether `message` is new for this version of `page`, recording it if so. */
+function isNewWarning(page: string, source: string | undefined, message: string): boolean {
+  let entry = warned.get(page);
+  if (!entry || entry.source !== source) {
+    entry = { source, messages: new Set() };
+    warned.set(page, entry);
+  }
+  if (entry.messages.has(message)) return false;
+  entry.messages.add(message);
+  return true;
+}
 
 /**
  * A markdown-it plugin for VitePress that renders dead links as text, with
@@ -79,8 +96,11 @@ export function markdownBrokenLinks(md: MarkdownIt, options: BrokenLinksOptions 
     };
     if (settings.warn) {
       const where = [location.file, location.line].filter((part) => part !== undefined).join(':');
-      const warn = site.logger ? site.logger.warn.bind(site.logger) : console.warn;
-      warn(`(!) Broken link ${href}${where ? ` in ${where}` : ''} is shown as text instead of a link.`);
+      const message = `(!) Broken link ${href}${where ? ` in ${where}` : ''} is shown as text instead of a link.`;
+      if (isNewWarning(file, sourceOf(env), message)) {
+        const warn = site.logger ? site.logger.warn.bind(site.logger) : console.warn;
+        warn(message);
+      }
     }
     stack.push(true);
     return hintOpenTag(settings.hints ? deadLinkMessage(dead, href) : undefined, location);

@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-10-13
+
+### Fixed
+
+- Each broken link is logged once per version of a page, instead of once for every time VitePress renders it (three times per `vitepress build`). A page whose source changes, as in `vitepress dev`, is warned about again
+
 ## [0.1.0] - 2026-10-13
 
 ### Added

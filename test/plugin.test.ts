@@ -90,6 +90,14 @@ describe('markdownBrokenLinks', () => {
     expect(html).not.toContain('data-broken-link-hint');
   });
 
+  it('warns once per version of a page, however often it renders', async () => {
+    await render('[x](/once)');
+    await render('[x](/once)');
+    expect(warn).toHaveBeenCalledTimes(1);
+    await render('Edited.\n\n[x](/once)');
+    expect(warn).toHaveBeenCalledTimes(2);
+  });
+
   it('does not warn with warn: false', async () => {
     await render('[x](/nope)', { warn: false });
     expect(warn).not.toHaveBeenCalled();
